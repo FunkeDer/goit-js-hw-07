@@ -26,12 +26,12 @@ const images = [
 ];
 
 
-const ulEl = document.querySelector('.gallery')
+const gallery = document.querySelector('.gallery')
 
-for (const image of images) {
-  let imgEl = document.createElement('img')
-  imgEl.src = image.url;
-  imgEl.alt = image.alt
-  imgEl.width = "360"
-  ulEl.appendChild(imgEl)
-} 
+const items = images.map(  (item) => {
+    let imgEl = document.createElement('img')
+    imgEl.classList.add('gallery-img')
+    imgEl.src = item.url
+    imgEl.alt = item.alt
+    gallery.append(imgEl)
+} )
