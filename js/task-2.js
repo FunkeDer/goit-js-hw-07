@@ -26,18 +26,8 @@ const images = [
 ];
 
 
-const gallery = document.querySelector('.gallery')
-let fragment = document.createDocumentFragment();
+const list = document.querySelector('.gallery')
 
-const items = images.forEach(
-  (item) => {
-    const imgEl = document.createElement('img');
-    imgEl.classList.add('gallery-img');
-    imgEl.src = item.url;
-    imgEl.alt = item.alt;
-    fragment.appendChild(imgEl);
-  }
-)
-console.log(items);
-
-gallery.append(items)
+const markup = images.map((img) => `<li><img class="gallery-img" src="${img.url}" alt="${img.alt}"></li>`).join("")
+ console.log(markup);
+list.insertAdjacentHTML("beforeend", markup)
