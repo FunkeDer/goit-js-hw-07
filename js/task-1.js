@@ -1,13 +1,9 @@
-const ulCategoriesEl = document.querySelector('#categories');
-const ulChildArr = Array.from(ulCategoriesEl.children);
+const categories = document.querySelector('#categories')
+const items = document.querySelectorAll('.item')
+console.log(`Кількість категорій: ${items.length}`);
 
-console.log(`Number of categories: ${ulChildArr.length}`);
-console.log(ulChildArr);
+items.forEach((category)=>{
+    let categoryName = category.querySelector('h2').textContent
+    let numberOfElements = category.querySelectorAll(`li`)
 
-ulChildArr.forEach(category => {
-    const categoryName = category.querySelector('h2').textContent;
-    const categoryItemCount = category.querySelectorAll('ul > li').length;
-    
-    console.log(`Category: ${categoryName}`);
-    console.log(`Elements: ${categoryItemCount}`);
-});
+})
